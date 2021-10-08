@@ -1,0 +1,38 @@
+.answer-selector {
+  margin: 5px 0;
+}
+.answer-selector Button {
+  border: 2px solid var(--primary-color);
+  background-color: #fff;
+  color: var(--primary-color);
+  width: 75px;
+  height: 37px;
+  line-height: 35px;
+  text-transform: capitalize;
+  font-size: 18px;
+}
+.answer-selector Button:first-of-type {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.answer-selector Button:last-of-type {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  margin-left: -2px;
+}
+.answer-selector.active-left Button:first-of-type {
+  background: var(--primary-color);
+  color: #fff;
+}
+.answer-selector.active-left Button:last-of-type {
+  background: #fff;
+  color: var(--primary-color);
+}
+.answer-selector.active-right Button:first-of-type {
+  background: #fff;
+  color: var(--primary-color);
+}
+.answer-selector.active-right Button:last-of-type {
+  background: var(--primary-color);
+  color: #fff;
+}

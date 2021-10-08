@@ -1,0 +1,35 @@
+.checks-container {
+  width: 100%;
+  max-width: 420px;
+  padding-bottom: 30px;
+}
+.checks-container:focus-visible {
+  outline: none;
+}
+.checks-questions {
+  width: 100%;
+  margin: 10px;
+}
+.checks-submit {
+  display: flex;
+  justify-content: right;
+}
+.checks-submit Button {
+  letter-spacing: 1px;
+  height: 48px;
+  font-size: 15px;
+  line-height: 48px;
+  padding: 0 19px;
+}
+.success-msg {
+  padding: 10px 25px;
+  border: 3px solid #45b746;
+  border-radius: 7px;
+  background: #71da7e8c;
+  color: #348e47;
+}
+.success-msg.success-msg--error {
+  border: 3px solid #ff6262;
+  background: #f18585;
+  color: #5f4747;
+}

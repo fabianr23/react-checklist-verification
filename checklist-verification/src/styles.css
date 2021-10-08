@@ -1,0 +1,12 @@
+.App {
+  font-family: sans-serif;
+  --primary-color: #004e5f;
+  --highlight-color: #def7f7;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.App h1 {
+  width: 100%;
+  text-align: center;
+}

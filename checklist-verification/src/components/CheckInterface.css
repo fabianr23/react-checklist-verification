@@ -1,0 +1,25 @@
+.check-interface {
+  width: 100%;
+  padding: 9px 17px 4px;
+}
+.check-interface.disabled {
+  opacity: 0.4;
+}
+.check-interface:hover {
+  background-color: #e3edf7;
+}
+.check-interface.disabled:hover {
+  background-color: transparent;
+}
+.check-interface__selected {
+  background-color: #e6fcfd;
+}
+.check-interface.disabled .answer-selector Button {
+  background-color: #ddd;
+  color: #888;
+  border-color: #aaa;
+}
+.check-interface p {
+  font-size: 17px;
+  margin: 0 0 10px;
+}
