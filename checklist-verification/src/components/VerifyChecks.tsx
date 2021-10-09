@@ -38,29 +38,31 @@ class VerifyChecks extends React.Component<
 
   private _isMounted: boolean = false;
 
-  componentDidMount() {
+  async componentDidMount() {
     this._isMounted = true;
-    const allChecks = async () => {
-      const response = await api.fetchChecks();
-      if (this._isMounted) {
-        this.setState(() => ({
-          checks: response,
-          loading: false,
-        }));
-        this.disableChecks();
-      }
-    };
-    allChecks().catch(() => {
-      if (this._isMounted) {
-        this.setState(() => ({
-          loading: false,
-        }));
-      }
-    });
+    await this.allChecks()
+      .then((response) => {
+        this._isMounted &&
+          this.setState(() => ({
+            checks: response,
+            loading: false,
+          }));
+        this._isMounted && this.disableChecks();
+      })
+      .catch(() => {
+        this._isMounted &&
+          this.setState(() => ({
+            loading: false,
+          }));
+      });
   }
 
   componentWillUnmount() {
     this._isMounted = false;
+  }
+
+  async allChecks() {
+    return await api.fetchChecks();
   }
 
   handleResponse(answer: string, position: number): void {
@@ -136,6 +138,9 @@ class VerifyChecks extends React.Component<
       case "2":
         this.handleResponse("no", current);
         break;
+      case "Enter":
+        this.handleSubmit();
+        break;
       default:
         break;
     }
@@ -174,7 +179,7 @@ class VerifyChecks extends React.Component<
   setAnswer(position: number, response: string): void {
     const newResults = [...this.state.results];
     newResults[position] = {
-      checkId: this.state.checks[position].id,
+      checkId: this.state.checks[position]?.id,
       result: response,
     };
     this.setState({ results: newResults });

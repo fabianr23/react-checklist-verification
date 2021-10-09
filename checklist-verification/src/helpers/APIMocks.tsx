@@ -1,4 +1,4 @@
-export const successResponse = [
+export const successFetchResponse = [
   {
     id: "aaa",
     priority: 10,
@@ -20,3 +20,22 @@ export const successResponse = [
     description: "Document data is clearly visible",
   },
 ];
+
+export const errorFetchResponse = { success: false };
+
+export const successResults = [
+  {
+    checkId: "ddd",
+    result: "yes",
+  },
+  {
+    checkId: "bbb",
+    results: "yes",
+  },
+  {
+    checkId: "ccc",
+    results: "no",
+  },
+];
+
+export const rejectResults = { success: false };

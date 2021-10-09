@@ -37,11 +37,10 @@ export function fetchChecks() {
  * @param {string} results[].result - Result value (yes / no)
  */
 export function submitCheckResults(results) {
-  console.log("results in api", results);
   return new Promise((resolve, reject) =>
     setTimeout(
       () =>
-        Math.random() <= 0.8 ? resolve(results) : reject({ success: false }),
+        Math.random() <= 0.1 ? resolve(results) : reject({ success: false }),
       500
     )
   );
