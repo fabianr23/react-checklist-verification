@@ -3,12 +3,12 @@ import ResponseSelector from "./ResponseSelector";
 import "./CheckInterface.css";
 
 const CheckInterface = (props: {
-  disabled: any;
-  currentSelected: any;
+  disabled: boolean;
+  currentSelected: boolean;
   description: String;
   handleClick: any;
-  position: any;
-  active: any;
+  position: number;
+  active: String;
 }) => {
   const classDisabled = props.disabled ? "disabled" : "";
   const selected = props.currentSelected ? "check-interface__selected" : "";
