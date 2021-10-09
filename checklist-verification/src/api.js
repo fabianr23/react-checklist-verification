@@ -40,7 +40,7 @@ export function submitCheckResults(results) {
   return new Promise((resolve, reject) =>
     setTimeout(
       () =>
-        Math.random() <= 0.1 ? resolve(results) : reject({ success: false }),
+        Math.random() <= 0.8 ? resolve(results) : reject({ success: false }),
       500
     )
   );
